@@ -1,11 +1,16 @@
 from cryptography.fernet import Fernet
 
 
-#def write_key():
-#    with open("key.key","wb") as f:
-#        key = Fernet.generate_key()
-#        f.write(key)
-#    return None
+def write_key():
+    with open("key.key","wb") as f:
+        key = Fernet.generate_key()
+        f.write(key)
+    return None
+
+try:
+    open("key.key")
+except:
+    write_key()
 
 # secret key
 def load_key():
